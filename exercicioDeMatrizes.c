@@ -7,7 +7,7 @@
 int main () {
     setlocale(LC_ALL,"portuguese");
 
-    //Declarando Vari·veis
+    //Declarando Vari√°veis
     
     int coluna = 4;
     int linha = 3;
@@ -20,12 +20,12 @@ int main () {
     //Solicitando Dados
     for ( i = 0; i < 4; i++)
     {
-        printf("Digite o aluno do %i∫ aluno: ", i+1);
+        printf("Digite o aluno do %i¬∫ aluno: ", i+1);
         gets(aluno[i]);
 
         for ( j = 0; j < 3; j++)
         {
-            printf("Digite a %i∫ nota do aluno: ", j + 1);
+            printf("Digite a %i¬∫ nota do aluno: ", j + 1);
             scanf("%f",&notas[i][j]);
 
             soma[i] += notas[i][j];
@@ -41,7 +41,7 @@ int main () {
     }
 
     system("cls || clear");
-    printf("Calculando MÈdia aritmÈtica");
+    printf("Calculando M√©dia aritm√©tica");
     for ( i = 0; i < 3; i++)
     {
         printf(".");
@@ -54,14 +54,14 @@ int main () {
     printf("-----------------------\n");
     for ( i = 0; i < 4; i++)
     {
-        printf("%i∫ aluno: %s \n\n", i+1, aluno[i]);
+        printf("%i¬∫ aluno: %s \n\n", i+1, aluno[i]);
 
         for ( j = 0; j < 3; j++)
         {
-            printf("%i∫ nota: %.2f \n", j + 1, notas[i][j]);
+            printf("%i¬∫ nota: %.2f \n", j + 1, notas[i][j]);
         }
         
-        printf("\nMÈdia: %.2f \n", media[i]);
+        printf("\nM√©dia: %.2f \n", media[i]);
         printf("----------------------------\n");
     }
 
