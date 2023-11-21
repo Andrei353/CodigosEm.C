@@ -1,54 +1,69 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<locale.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 #include <string.h>
+#include <time.h>
 
-int main (){
-	setlocale(LC_ALL,"portuguese")
-//Declarando Variaveis
-char alunos[2] [200];
-float notas[2][3];
-int i, j;
+int main () {
+    setlocale(LC_ALL,"portuguese");
 
-for ( i = 0; i < 2; i++)
-{
-    printf("Digite o nome do %dÂº aluno: ", i + 1);
-    gets(alunos[i]);
+    //Declarando Variáveis
+    
+    int coluna = 4;
+    int linha = 3;
+    char aluno [linha] [250];
+    float notas [linha][coluna];
+    float soma [linha];
+    float media [linha];
+    int i,j;
 
-    for ( j = 0; j < 3; j++)
+    //Solicitando Dados
+    for ( i = 0; i < 4; i++)
     {
-       printf("Digite o nome do %dÂº aluno: ", j + 1);
-       scanf("%f",&notas[i][j]);
+        printf("Digite o aluno do %iº aluno: ", i+1);
+        gets(aluno[i]);
+
+        for ( j = 0; j < 3; j++)
+        {
+            printf("Digite a %iº nota do aluno: ", j + 1);
+            scanf("%f",&notas[i][j]);
+
+            soma[i] += notas[i][j];
+    
+        }
+        fflush(stdin);
+        printf("\n");
     }
     
-}
-
-system("cls || clear");
-printf("Armazenando Notas e calculando mï¿½dia ");
-for ( i = 0; i < 3; i++)
-{
-    printf(".");
-sleep(1);
-}
-
-
-for ( i = 0; i < 2; i++)
-{
-    printf("Nome do %dÂº aluno: ", i + 1, alunos[i]);
-    
-    for ( j = 0; j < 3; j++)
+    for ( i = 0; i < 4; i++)
     {
-        printf("%d Notas: %.1f \n", i + 1, j + 1, notas[i][j] );
+        media[i] = soma[i] / 3;
     }
+
+    system("cls || clear");
+    printf("Calculando Média aritmética");
+    for ( i = 0; i < 3; i++)
+    {
+        printf(".");
+        sleep(1);
+    }
+    sleep(1);
+    system("cls || clear");
     
-}
+        
+    printf("-----------------------\n");
+    for ( i = 0; i < 4; i++)
+    {
+        printf("%iº aluno: %s \n\n", i+1, aluno[i]);
 
+        for ( j = 0; j < 3; j++)
+        {
+            printf("%iº nota: %.2f \n", j + 1, notas[i][j]);
+        }
+        
+        printf("\nMédia: %.2f \n", media[i]);
+        printf("----------------------------\n");
+    }
 
-
-
-
-
-
-
-return 0;
+    return 0;
 }
