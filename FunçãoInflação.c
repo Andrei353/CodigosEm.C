@@ -23,9 +23,6 @@ float inflacao(float precoDaInflacao){
  return resultado;
 }
 
-
-
-
 int main(){
    setlocale(LC_ALL, "portuguese");
 //Declarando Variaveis
@@ -39,12 +36,8 @@ scanf("%f",&valor);
 //Resultado
  valorfinal = inflacao(valor);
 
- printf("Valor Total: %.2f", valorfinal);
-
-
-
-
-
+printf("Valor Da Compra: R$ %.2f \n", valor);
+ printf("Valor Total: R$ %.2f%% \n", valorfinal);
 
 return 0;
 }
